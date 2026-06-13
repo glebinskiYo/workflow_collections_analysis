@@ -220,32 +220,50 @@ data/epigenomics-chameleon-hep-2seq-100k-001.json
 
 ## Using a Different Workflow
 
-The analysis scripts currently reference:
+The repository is configured for the workflow instance and DAG included with this project. When analyzing a different workflow, the workflow must first be executed with Nextflow monitoring enabled to generate the required execution artifacts:
+
+```text
+trace.txt
+execution_report_<workflow>.html
+execution_timeline_<workflow>.html
+dag.html
+```
+
+These files can then be used to generate a new WfInstance and DAG representation.
+
+The WfInstance generation script must be updated wherever the workflow name or output filename is specified. For example:
+
+```python
+workflow = parser.build_workflow(
+    "<workflow_name>"
+)
+```
+
+and
+
+```python
+workflow.write_json(
+    ROOT
+    / "data"
+    / "<workflow_name>_wfinstance.json"
+)
+```
+
+must be replaced with values corresponding to the new workflow.
+
+Similarly, the analysis scripts currently reference:
 
 ```python
 ROOT / "data" / "ampliseq_wfinstance.json"
 ```
 
-If a different workflow instance is generated, replace the filename accordingly.
-
-Example:
-
-```python
-with open(
-    ROOT / "data" / "rnaseq_wfinstance.json"
-) as f:
-```
-
-Similarly, DAG scripts reference:
+and
 
 ```python
 ROOT / "data" / "ampliseq.dot"
 ```
 
-For another workflow, change this to:
+These paths must be updated to point to the WfInstance JSON file and DOT file generated for the new workflow.
 
-```python
-ROOT / "data" / "rnaseq.dot"
-```
+In general, every occurrence of the original workflow name within file paths, input filenames, output filenames, and workflow identifiers must be replaced with the corresponding values of the new workflow. Once these changes have been made, the analysis scripts can be executed without further modification, provided that the generated workflow instance conforms to the WfCommons WfFormat schema.
 
-No further modifications are required as long as the workflow instance conforms to the WfCommons WfFormat schema.
