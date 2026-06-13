@@ -65,12 +65,7 @@ mkdir ampliseq_execution
 cd ampliseq_execution
 ```
 
-Clone the workflow:
 
-```bash
-git clone https://github.com/nf-core/ampliseq.git
-cd ampliseq
-```
 
 Run the workflow with monitoring enabled:
 
