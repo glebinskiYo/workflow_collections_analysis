@@ -1,0 +1,2879 @@
+digraph "ampliseq" {
+rankdir=TB;
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v234 [label="ch_tax_for_robject"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v47 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v52 [label="ch_multiqc_files"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromPath"];
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v5 -> v260 [label="ch_metadata"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromPath"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v6 -> v561 [label="ch_report_template"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromPath"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v7 -> v561 [label="ch_report_css"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromPath"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v8 -> v561 [label="ch_report_logo"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 -> v488 [label="ch_input_fasta"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v11 [shape=point];
+v10 -> v11 [label="ch_input_reads"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v16 [label="ch_input_reads"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_pplace_sheet"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v16 -> v17 [label="ch_input_reads"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 -> v21 [label="ch_reads"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v19 -> v20;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v22 -> v172 [label="ch_decontam_metadata"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v23 [label="ch_reads"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [label="NFCORE_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES"];
+v23 -> v46 [label="ch_reads"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v25 [shape=point];
+v24 -> v25 [label="ch_sidle_ref_taxonomy"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v27 [shape=point];
+v26 -> v27 [label="ch_sidle_ref_taxonomy_tree"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_dada_assigntax"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v31 [shape=point];
+v30 -> v31 [label="ch_dada_addspecies"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v33 [shape=point];
+v32 -> v33 [label="ch_dada_ref_taxonomy"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35 [label="ch_dada_ref_taxonomy_url"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 -> v206 [label="ch_dada_ref_taxonomy"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v37 [shape=point];
+v36 -> v37 [label="ch_qiime_ref_taxonomy"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v39 [shape=point];
+v38 -> v39 [label="ch_qiime_classifier"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v41 [label="ch_qiime_ref_taxonomy_url"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 -> v239 [label="ch_qiime_ref_taxonomy"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v43 [shape=point];
+v42 -> v43 [label="ch_sintax_ref_taxonomy"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v45 [shape=point];
+v44 -> v45 [label="ch_kraken2_ref_taxonomy"];
+
+v46 [label="NFCORE_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES"];
+v48 [label="NFCORE_AMPLISEQ:AMPLISEQ:FASTQC"];
+v46 -> v48 [label="ch_file"];
+
+v46 [label="NFCORE_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v70 [label="ch_versions"];
+
+v48 [label="NFCORE_AMPLISEQ:AMPLISEQ:FASTQC"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="NFCORE_AMPLISEQ:AMPLISEQ:FASTQC"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v51;
+
+v48 [label="NFCORE_AMPLISEQ:AMPLISEQ:FASTQC"];
+v49 [shape=point];
+v48 -> v49;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v69 [label="ch_multiqc_files"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v60 [label="ch_versions_cutadapt_workflow"];
+
+v46 [label="NFCORE_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES"];
+v54 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC"];
+v46 -> v54 [label="ch_file"];
+
+v54 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v54 -> v64 [label="ch_trimmed_reads"];
+
+v54 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v56 [label="logs"];
+
+v54 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC"];
+v55 [shape=point];
+v54 -> v55;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v59 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD"];
+v57 -> v59 [label="ch_cutadapt_logs"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD"];
+v58 -> v59 [label="name"];
+
+v59 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD"];
+v62 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE"];
+v59 -> v62;
+
+v59 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v70 [label="versions"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v62 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE"];
+v61 -> v62 [label="action"];
+
+v62 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE"];
+v150 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD"];
+v62 -> v150 [label="summary"];
+
+v62 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE"];
+v63 [shape=point];
+v62 -> v63;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v65;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v72 [label="ch_trimmed_reads"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v66 -> v67;
+
+v54 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 -> v68 [label="logs"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v472 [label="ch_multiqc_files"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v123 [label="ch_versions"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v84 [label="ch_versions_dada2_preprocessing"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v78 [label="ch_all_trimmed_fw"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v75 [label="ch_trimmed_reads"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78 [label="ch_all_trimmed_rv"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v78 -> v81 [label="ch_all_trimmed_reads"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v80 [shape=point];
+v79 -> v80 [label="ch_DADA2_QUALITY1_SVG"];
+
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v121 [label="ch_DADA2_QUALITY1_SVG"];
+
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v86 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN"];
+v81 -> v86;
+
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v84;
+
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v82 [shape=point];
+v81 -> v82;
+
+v81 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v81 -> v85;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v88 [label="ch_versions_dada2_preprocessing"];
+
+v86 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v86 -> v87;
+
+v86 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v88;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v87 -> v89 [label="ch_trunc"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v92 [label="ch_versions_dada2_preprocessing"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v64 -> v90 [label="ch_trimmed_reads"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v87 -> v90 [label="ch_trunc"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v91 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM"];
+v90 -> v91 [label="ch_trimmed_reads"];
+
+v91 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v91 -> v93;
+
+v91 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v113 [label="ch_versions_dada2_preprocessing"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v97 [label="ch_dada2_filtntrim_results_passed"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v95 -> v96;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 -> v100 [label="ch_dada2_filtntrim_reads_passed"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v98 [label="ch_dada2_filtntrim_results_passed"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 -> v118 [label="ch_dada2_filtntrim_logs_passed"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v99 [label="ch_dada2_filtntrim_results_passed"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 -> v491 [label="args"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v106 [label="ch_all_preprocessed_fw"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 -> v103 [label="ch_dada2_filtntrim_reads_passed"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106 [label="ch_all_preprocessed_rv"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v106 -> v109 [label="ch_all_preprocessed_reads"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v108 [shape=point];
+v107 -> v108 [label="ch_DADA2_QUALITY2_SVG"];
+
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v112 [shape=point];
+v109 -> v112;
+
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v122 [label="ch_DADA2_QUALITY2_SVG"];
+
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v111 [shape=point];
+v109 -> v111;
+
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v113;
+
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v110 [shape=point];
+v109 -> v110;
+
+v109 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v109 -> v114;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v123 [label="versions"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 -> v115 [label="ch_dada2_filtntrim_reads_passed"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v117 -> v124 [label="ch_filt_reads"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 -> v138 [label="logs"];
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v121 -> v493 [label="qc_svg"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v122 -> v494 [label="qc_svg_preprocessed"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v129 [label="ch_versions"];
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 -> v130 [label="ch_errormodel"];
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v128 [shape=point];
+v124 -> v128;
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 -> v495;
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v127 [shape=point];
+v124 -> v127;
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v126 [shape=point];
+v124 -> v126;
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v129;
+
+v124 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR"];
+v125 [shape=point];
+v124 -> v125;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v134 [label="ch_versions"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v130 [label="ch_filt_reads"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v130 -> v131 [label="ch_derep_errormodel"];
+
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v138;
+
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v135 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA"];
+v131 -> v135;
+
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v139;
+
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v134;
+
+v131 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING"];
+v132 [shape=point];
+v131 -> v132;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v137 [label="ch_versions"];
+
+v135 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 -> v140;
+
+v135 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v137;
+
+v135 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA"];
+v136 [shape=point];
+v135 -> v136;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v142 [label="ch_versions"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v141 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS"];
+v140 -> v141 [label="ch_track_numbers"];
+
+v141 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 -> v143;
+
+v141 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v149 [label="ch_versions"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v144 -> v147;
+
+v135 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v146 -> v147;
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v150 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD"];
+v147 -> v150;
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v147 -> v501;
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v147 -> v166 [label="ch_dada2_asv"];
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 -> v152 [label="ch_dada2_fasta"];
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v148 [shape=point];
+v147 -> v148;
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v151 [label="ch_versions"];
+
+v150 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD"];
+v184 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_DECONTAM"];
+v150 -> v184 [label="ch_stats"];
+
+v150 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v168 [label="ch_versions"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v152 -> v153 [label="ch_fasta_for_clustering"];
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v165 [shape=point];
+v153 -> v165;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v164 [shape=point];
+v153 -> v164;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v163 [shape=point];
+v153 -> v163;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v162 [shape=point];
+v153 -> v162;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v161 [shape=point];
+v153 -> v161;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v160 [shape=point];
+v153 -> v160;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v159 [shape=point];
+v153 -> v159;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v158 [shape=point];
+v153 -> v158;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v157 [shape=point];
+v153 -> v157;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v153 -> v166;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v156 [shape=point];
+v153 -> v156;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v155 [shape=point];
+v153 -> v155;
+
+v153 [label="NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER"];
+v154 [shape=point];
+v153 -> v154;
+
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v166 -> v172 [label="ch_dada2_asv"];
+
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v166 -> v179 [label="ch_dada2_fasta"];
+
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v167 [shape=point];
+v166 -> v167;
+
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v176 [label="ch_versions"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v169 -> v172 [label="iscontaminant_method"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v170 -> v172 [label="iscontaminant_threshold"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v171 -> v172 [label="isnotcontaminant_threshold"];
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v172 -> v177;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v184 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_DECONTAM"];
+v172 -> v184;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v175 [shape=point];
+v172 -> v175;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 -> v506;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v174 [shape=point];
+v172 -> v174;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 -> v505;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v507 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 -> v507;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v183 [label="ch_versions"];
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v177 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v178 -> v179 [label="ch_dada2_asv"];
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v186 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP"];
+v179 -> v186 [label="ch_unfiltered_fasta"];
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v182 [shape=point];
+v179 -> v182;
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v181 [shape=point];
+v179 -> v181;
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v180 [shape=point];
+v179 -> v180;
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v185 [label="ch_versions"];
+
+v184 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_DECONTAM"];
+v197 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERSSU"];
+v184 -> v197 [label="ch_stats"];
+
+v184 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_DECONTAM"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v188 [label="ch_versions"];
+
+v186 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP"];
+v187 [shape=point];
+v186 -> v187;
+
+v186 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v186 -> v189;
+
+v186 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v191 [label="ch_versions"];
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v190 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY"];
+v189 -> v190;
+
+v190 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY"];
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v190 -> v194 [label="ch_barrnapsummary"];
+
+v190 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v190 -> v192;
+
+v190 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v196 [label="ch_versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v178 -> v193 [label="ch_dada2_asv"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v193 -> v194;
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v179 -> v194 [label="ch_unfiltered_fasta"];
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v195 [shape=point];
+v194 -> v195;
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v197 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERSSU"];
+v194 -> v197;
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 -> v199 [label="ch_dada2_asv"];
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v194 -> v200 [label="ch_dada2_fasta"];
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v198 [label="ch_versions"];
+
+v197 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERSSU"];
+v203 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERLENASV"];
+v197 -> v203 [label="ch_stats"];
+
+v197 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERSSU"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v202 [label="ch_versions"];
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v199 -> v200;
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v203 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERLENASV"];
+v200 -> v203;
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v200 -> v260 [label="ch_dada2_asv"];
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v200 -> v205 [label="ch_fasta"];
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v200 -> v512;
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v201 [shape=point];
+v200 -> v201;
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v210 [label="ch_versions"];
+
+v203 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERLENASV"];
+v280 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERTAXA"];
+v203 -> v280 [label="ch_stats"];
+
+v203 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERLENASV"];
+v204 [shape=point];
+v203 -> v204;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v208 [label="NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY"];
+v206 -> v208;
+
+v207 [shape=point,label="",fixedsize=true,width=0.1];
+v208 [label="NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY"];
+v207 -> v208 [label="suffix"];
+
+v208 [label="NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v208 -> v212 [label="ch_assigntax"];
+
+v208 [label="NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v208 -> v225 [label="ch_addspecies"];
+
+v208 [label="NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY"];
+v209 [shape=point];
+v208 -> v209;
+
+v208 [label="NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v210;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v232 [label="ch_versions"];
+
+v211 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 -> v222 [label="ch_versions_dada_taxonomy"];
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:CUTADAPT_TAXONOMY"];
+v212 -> v213 [label="ch_assigntax"];
+
+v213 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:CUTADAPT_TAXONOMY"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 -> v215;
+
+v213 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:CUTADAPT_TAXONOMY"];
+v514 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v213 -> v514 [label="cut_tax"];
+
+v213 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:CUTADAPT_TAXONOMY"];
+v214 [shape=point];
+v213 -> v214;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v215 -> v217 [label="ch_assigntax"];
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v200 -> v216 [label="ch_fasta"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v216 -> v220 [label="ch_fasta_chunks"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v217 -> v220;
+
+v218 [shape=point,label="",fixedsize=true,width=0.1];
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v218 -> v220 [label="outfile"];
+
+v219 [shape=point,label="",fixedsize=true,width=0.1];
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v219 -> v220 [label="taxlevels_input"];
+
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v220 -> v223;
+
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v227 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES"];
+v220 -> v227;
+
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v222;
+
+v220 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY"];
+v221 [shape=point];
+v220 -> v221;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v232 [label="versions"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v223 -> v224 [label="ch_dada2_taxonomy_tsv"];
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v227 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES"];
+v225 -> v227;
+
+v226 [shape=point,label="",fixedsize=true,width=0.1];
+v227 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES"];
+v226 -> v227 [label="taxlevels_input"];
+
+v227 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v227 -> v230;
+
+v227 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES"];
+v229 [shape=point];
+v227 -> v229;
+
+v227 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES"];
+v228 [shape=point];
+v227 -> v228;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v230 -> v231 [label="ch_DADA2_tax_tsv"];
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v250 [label="ch_versions"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v230 -> v233 [label="ch_DADA2_tax_tsv"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v259 [label="ch_tax_for_robject"];
+
+v235 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v236 [shape=point];
+v235 -> v236 [label="ch_kraken2_tax"];
+
+v237 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v312 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX"];
+v237 -> v312 [label="ch_SINTAX_tax_tsv"];
+
+v238 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v308 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE"];
+v238 -> v308 [label="ch_pplace_tax_tsv"];
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v241 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:FORMAT_TAXONOMY_QIIME"];
+v239 -> v241 [label="ch_qiime_ref_taxonomy"];
+
+v240 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v243 [label="ch_qiime2_preptax_versions"];
+
+v241 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:FORMAT_TAXONOMY_QIIME"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v241 -> v244;
+
+v241 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:FORMAT_TAXONOMY_QIIME"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v241 -> v244;
+
+v241 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:FORMAT_TAXONOMY_QIIME"];
+v242 [shape=point];
+v241 -> v242;
+
+v241 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:FORMAT_TAXONOMY_QIIME"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v247 [label="ch_qiime2_preptax_versions"];
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v244 -> v245 [label="ch_ref_database"];
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v246 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_EXTRACT"];
+v245 -> v246 [label="ch_ref_database"];
+
+v246 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_EXTRACT"];
+v248 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_TRAIN"];
+v246 -> v248;
+
+v246 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_EXTRACT"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v249 [label="ch_qiime2_preptax_versions"];
+
+v248 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_TRAIN"];
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v248 -> v252 [label="ch_classifier"];
+
+v248 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_TRAIN"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v250 [label="versions"];
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v255 [label="ch_versions"];
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v251 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_INSEQ"];
+v200 -> v251 [label="ch_fasta"];
+
+v251 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_INSEQ"];
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v251 -> v252;
+
+v251 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_INSEQ"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v254;
+
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v253 [shape=point];
+v252 -> v253 [label="qza"];
+
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v256 [label="NFCORE_AMPLISEQ:AMPLISEQ:PHYLOSEQ_INTAX_QIIME2"];
+v252 -> v256 [label="ch_QIIME2_tax_tsv"];
+
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 -> v255 [label="versions"];
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v255 -> v261 [label="ch_versions"];
+
+v256 [label="NFCORE_AMPLISEQ:AMPLISEQ:PHYLOSEQ_INTAX_QIIME2"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v256 -> v258;
+
+v256 [label="NFCORE_AMPLISEQ:AMPLISEQ:PHYLOSEQ_INTAX_QIIME2"];
+v257 [shape=point];
+v256 -> v257;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v259;
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v259 -> v442 [label="ch_tax"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 -> v316 [label="ch_meta"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v264 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INASV"];
+v260 -> v264 [label="ch_dada2_asv"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v260 -> v262;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v265 [label="ch_versions"];
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v262 -> v263;
+
+v264 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INASV"];
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v264 -> v274;
+
+v264 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INASV"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 -> v265;
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v267 [label="ch_versions"];
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v266 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INSEQ"];
+v200 -> v266 [label="ch_fasta"];
+
+v266 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INSEQ"];
+v276 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_SEQFILTERTABLE"];
+v266 -> v276;
+
+v266 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INSEQ"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v275 [label="ch_versions"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v230 -> v269 [label="ch_DADA2_tax_tsv"];
+
+v268 [shape=point,label="",fixedsize=true,width=0.1];
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v268 -> v269 [label="script"];
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v269 -> v274 [label="ch_tax"];
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v270 [shape=point];
+v269 -> v270;
+
+v271 [shape=point,label="",fixedsize=true,width=0.1];
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v271 -> v274 [label="min_frequency"];
+
+v272 [shape=point,label="",fixedsize=true,width=0.1];
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v272 -> v274 [label="min_samples"];
+
+v273 [shape=point,label="",fixedsize=true,width=0.1];
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v273 -> v274 [label="exclude_taxa"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v276 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_SEQFILTERTABLE"];
+v274 -> v276 [label="ch_asv"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v278 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_STATS"];
+v274 -> v278 [label="ch_tsv"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v275;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v277 [label="ch_versions"];
+
+v276 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_SEQFILTERTABLE"];
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v276 -> v286 [label="ch_seq"];
+
+v276 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_SEQFILTERTABLE"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v279 [label="ch_versions"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v278 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_STATS"];
+v260 -> v278 [label="ch_dada2_asv"];
+
+v278 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_STATS"];
+v280 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERTAXA"];
+v278 -> v280;
+
+v278 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_STATS"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v282 [label="ch_versions"];
+
+v280 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERTAXA"];
+v281 [shape=point];
+v280 -> v281;
+
+v280 [label="NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERTAXA"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v315 [label="ch_versions"];
+
+v283 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v291 [label="ch_versions_qiime2_export"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v274 -> v286 [label="ch_asv"];
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v269 -> v286 [label="ch_tax"];
+
+v284 [shape=point,label="",fixedsize=true,width=0.1];
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v284 -> v286 [label="tax_agglom_min"];
+
+v285 [shape=point,label="",fixedsize=true,width=0.1];
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v285 -> v286 [label="tax_agglom_max"];
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v300 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2"];
+v286 -> v300 [label="abs_fasta"];
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v286 -> v522 [label="abs_tsv"];
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v290 [shape=point];
+v286 -> v290;
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v289 [shape=point];
+v286 -> v289;
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v288 [shape=point];
+v286 -> v288;
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v287 [shape=point];
+v286 -> v287;
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v286 -> v291;
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 -> v293 [label="ch_versions_qiime2_export"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v274 -> v292 [label="ch_asv"];
+
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v300 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2"];
+v292 -> v300 [label="ch_rel_tsv"];
+
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 -> v298 [label="ch_versions_qiime2_export"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v296 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX"];
+v274 -> v296 [label="ch_asv"];
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v296 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX"];
+v269 -> v296 [label="ch_tax"];
+
+v294 [shape=point,label="",fixedsize=true,width=0.1];
+v296 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX"];
+v294 -> v296 [label="tax_agglom_min"];
+
+v295 [shape=point,label="",fixedsize=true,width=0.1];
+v296 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX"];
+v295 -> v296 [label="tax_agglom_max"];
+
+v296 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX"];
+v297 [shape=point];
+v296 -> v297;
+
+v296 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 -> v298;
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 -> v302 [label="ch_versions_qiime2_export"];
+
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v300 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2"];
+v252 -> v300 [label="ch_QIIME2_tax_tsv"];
+
+v299 [shape=point,label="",fixedsize=true,width=0.1];
+v300 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2"];
+v299 -> v300 [label="outfile"];
+
+v300 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2"];
+v301 [shape=point];
+v300 -> v301;
+
+v300 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v300 -> v302;
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 -> v306 [label="ch_versions_qiime2_export"];
+
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v304 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2"];
+v292 -> v304 [label="ch_rel_tsv"];
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v304 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2"];
+v286 -> v304 [label="abs_fasta"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v304 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2"];
+v230 -> v304 [label="ch_DADA2_tax_tsv"];
+
+v303 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2"];
+v303 -> v304 [label="outfile"];
+
+v304 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2"];
+v305 [shape=point];
+v304 -> v305;
+
+v304 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 -> v306;
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v306 -> v310 [label="ch_versions_qiime2_export"];
+
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v308 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE"];
+v292 -> v308 [label="ch_rel_tsv"];
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v308 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE"];
+v286 -> v308 [label="abs_fasta"];
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v308 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE"];
+v307 -> v308 [label="outfile"];
+
+v308 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE"];
+v309 [shape=point];
+v308 -> v309;
+
+v308 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 -> v310;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v310 -> v314 [label="ch_versions_qiime2_export"];
+
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v312 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX"];
+v292 -> v312 [label="ch_rel_tsv"];
+
+v286 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE"];
+v312 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX"];
+v286 -> v312 [label="abs_fasta"];
+
+v311 [shape=point,label="",fixedsize=true,width=0.1];
+v312 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX"];
+v311 -> v312 [label="outfile"];
+
+v312 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX"];
+v313 [shape=point];
+v312 -> v313;
+
+v312 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v312 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 -> v315 [label="versions"];
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 -> v319 [label="ch_versions"];
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v318 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT"];
+v316 -> v318;
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v318 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT"];
+v274 -> v318 [label="ch_asv"];
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v318 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT"];
+v269 -> v318 [label="ch_tax"];
+
+v317 [shape=point,label="",fixedsize=true,width=0.1];
+v318 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT"];
+v317 -> v318 [label="setting"];
+
+v318 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v318 -> v521;
+
+v318 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v334 [label="ch_versions"];
+
+v320 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 -> v323 [label="ch_versions_qiime2_barplotavg"];
+
+v321 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v321 -> v325 [label="ch_metadata_category_barplot"];
+
+v292 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV"];
+v322 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_INASV_BPAVG"];
+v292 -> v322 [label="ch_rel_tsv"];
+
+v322 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_INASV_BPAVG"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v322 -> v324;
+
+v322 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_INASV_BPAVG"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 -> v323;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v323 -> v327 [label="ch_versions_qiime2_barplotavg"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v324 [label="ch_meta"];
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v324 -> v325;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v326 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_FEATURETABLE_GROUP"];
+v325 -> v326;
+
+v326 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_FEATURETABLE_GROUP"];
+v331 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG"];
+v326 -> v331;
+
+v326 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_FEATURETABLE_GROUP"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v326 -> v327;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v327 -> v333 [label="ch_versions_qiime2_barplotavg"];
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v269 -> v328 [label="ch_tax"];
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v331 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG"];
+v328 -> v331;
+
+v329 [shape=point,label="",fixedsize=true,width=0.1];
+v331 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG"];
+v329 -> v331 [label="metadata"];
+
+v330 [shape=point,label="",fixedsize=true,width=0.1];
+v331 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG"];
+v330 -> v331 [label="setting"];
+
+v331 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG"];
+v332 [shape=point];
+v331 -> v332;
+
+v331 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v333;
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v333 -> v334 [label="versions"];
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 -> v336 [label="ch_versions"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v335 [label="NFCORE_AMPLISEQ:AMPLISEQ:METADATA_ALL"];
+v260 -> v335 [label="ch_meta"];
+
+v335 [label="NFCORE_AMPLISEQ:AMPLISEQ:METADATA_ALL"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v335 -> v337 [label="ch_metacolumn_all"];
+
+v335 [label="NFCORE_AMPLISEQ:AMPLISEQ:METADATA_ALL"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v335 -> v336;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v336 -> v341 [label="ch_versions"];
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v337 -> v338 [label="ch_metacolumn_all"];
+
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v338 -> v339;
+
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v339 -> v384 [label="ch_metacolumn_all"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v340 [label="NFCORE_AMPLISEQ:AMPLISEQ:METADATA_PAIRWISE"];
+v260 -> v340 [label="ch_meta"];
+
+v340 [label="NFCORE_AMPLISEQ:AMPLISEQ:METADATA_PAIRWISE"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v340 -> v342 [label="ch_metacolumn_pairwise"];
+
+v340 [label="NFCORE_AMPLISEQ:AMPLISEQ:METADATA_PAIRWISE"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 -> v341;
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 -> v380 [label="ch_versions"];
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v342 -> v343;
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v343 -> v363 [label="ch_metacolumn_pairwise"];
+
+v344 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v344 -> v346 [label="ch_versions_qiime2_diversity"];
+
+v276 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_SEQFILTERTABLE"];
+v345 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_TREE"];
+v276 -> v345 [label="ch_seq"];
+
+v345 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_TREE"];
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v345 -> v347 [label="tree_qza"];
+
+v345 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_TREE"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v345 -> v445 [label="ch_robject_intree"];
+
+v345 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_TREE"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v345 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v350 [label="ch_versions_qiime2_diversity"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v260 -> v347 [label="ch_meta"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v274 -> v347 [label="ch_asv"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v274 -> v347 [label="ch_tsv"];
+
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v349 [shape=point];
+v347 -> v349;
+
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v348 [shape=point];
+v347 -> v348;
+
+v347 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v350 -> v354 [label="ch_versions_qiime2_diversity"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v260 -> v352 [label="ch_meta"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v274 -> v352 [label="ch_asv"];
+
+v345 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_TREE"];
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v345 -> v352 [label="tree_qza"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v274 -> v352 [label="ch_tsv"];
+
+v351 [shape=point,label="",fixedsize=true,width=0.1];
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v351 -> v352 [label="mindepth"];
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v352 -> v374;
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v352 -> v356;
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v352 -> v361;
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v353 [shape=point];
+v352 -> v353;
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 -> v354;
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v352 -> v355 [label="depth"];
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 -> v360 [label="ch_versions_qiime2_diversity"];
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v356 -> v357;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v357 [label="ch_meta"];
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v358 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA"];
+v357 -> v358 [label="ch_to_diversity_alpha"];
+
+v358 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA"];
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v358 -> v524 [label="alpha"];
+
+v358 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA"];
+v359 [shape=point];
+v358 -> v359;
+
+v358 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v358 -> v360;
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v366 [label="ch_versions_qiime2_diversity"];
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v361 -> v362;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v362 [label="ch_meta"];
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v362 -> v363;
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v364 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA"];
+v363 -> v364 [label="ch_to_diversity_beta"];
+
+v364 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA"];
+v526 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v364 -> v526 [label="beta"];
+
+v364 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA"];
+v365 [shape=point];
+v364 -> v365;
+
+v364 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v366;
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v373 [label="ch_versions_qiime2_diversity"];
+
+v367 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v367 -> v370 [label="ch_qiime_adonis_formula"];
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v352 -> v368;
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v368 -> v369;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v369 [label="ch_meta"];
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v369 -> v370;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v371 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS"];
+v370 -> v371 [label="ch_to_diversity_beta"];
+
+v371 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS"];
+v528 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v371 -> v528 [label="adonis"];
+
+v371 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS"];
+v372 [shape=point];
+v371 -> v372;
+
+v371 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 -> v379 [label="ch_versions_qiime2_diversity"];
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v374 -> v375;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v375 [label="ch_meta"];
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v376 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD"];
+v375 -> v376 [label="ch_to_diversity_betaord"];
+
+v376 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD"];
+v378 [shape=point];
+v376 -> v378 [label="betaord"];
+
+v376 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD"];
+v377 [shape=point];
+v376 -> v377;
+
+v376 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v379;
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 -> v380 [label="versions"];
+
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v380 -> v430 [label="ch_versions"];
+
+v381 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v386 [label="ch_versions_qiime2_ancom"];
+
+v382 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.of"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v382 -> v389 [label="ch_taxlevel"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v383 [label="ch_meta"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v274 -> v383 [label="ch_asv"];
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v383 -> v384;
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v385 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM"];
+v384 -> v385 [label="ch_for_filtersamples"];
+
+v385 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v385 -> v387;
+
+v385 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 -> v386;
+
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 -> v396 [label="ch_versions_qiime2_ancom"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v387 [label="ch_meta"];
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v387 -> v388;
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v269 -> v388 [label="ch_tax"];
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v388 -> v389;
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v389 -> v391;
+
+v390 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v390 -> v391;
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v391 -> v392 [label="ch_for_ancombc_tax"];
+
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v392 -> v397;
+
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v395 [shape=point];
+v392 -> v395;
+
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v394 [shape=point];
+v392 -> v394;
+
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v393 [shape=point];
+v392 -> v393;
+
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v406 [label="ch_versions_qiime2_ancom"];
+
+v385 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v385 -> v398;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v398 -> v399;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v399 [label="ch_meta"];
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v399 -> v401;
+
+v400 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v400 -> v401;
+
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v402 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV"];
+v401 -> v402;
+
+v402 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 -> v428;
+
+v402 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV"];
+v405 [shape=point];
+v402 -> v405;
+
+v402 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV"];
+v404 [shape=point];
+v402 -> v404;
+
+v402 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV"];
+v403 [shape=point];
+v402 -> v403;
+
+v402 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 -> v406;
+
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 -> v417 [label="ch_versions_qiime2_ancom"];
+
+v407 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v407 -> v412 [label="ch_ancombc_formula"];
+
+v408 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.of"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v408 -> v411 [label="ch_taxlevel"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v409 [label="ch_meta"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v274 -> v409 [label="ch_asv"];
+
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v409 -> v410;
+
+v269 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v269 -> v410 [label="ch_tax"];
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v410 -> v411;
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v411 -> v412;
+
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v412 -> v413 [label="ch_for_ancombc_tax"];
+
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v413 -> v418;
+
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v416 [shape=point];
+v413 -> v416;
+
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v415 [shape=point];
+v413 -> v415;
+
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v414 [shape=point];
+v413 -> v414;
+
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v413 -> v417;
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v417 -> v425 [label="ch_versions_qiime2_ancom"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v274 -> v419 [label="ch_asv"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v260 -> v419 [label="ch_meta"];
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v419 -> v420;
+
+v407 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromList"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v407 -> v420 [label="ch_ancombc_formula"];
+
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v421 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV"];
+v420 -> v421;
+
+v421 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v421 -> v429;
+
+v421 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV"];
+v424 [shape=point];
+v421 -> v424;
+
+v421 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV"];
+v423 [shape=point];
+v421 -> v423;
+
+v421 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV"];
+v422 [shape=point];
+v421 -> v422;
+
+v421 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v421 -> v425;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 -> v430 [label="versions"];
+
+v426 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v427 [shape=point];
+v426 -> v427 [label="ancom"];
+
+v392 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 -> v428;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v428 -> v530 [label="ancombc"];
+
+v413 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v413 -> v429;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v429 -> v532 [label="ancombc_formula"];
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v430 -> v438 [label="ch_versions"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v431 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORT"];
+v260 -> v431 [label="ch_dada2_asv"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v431 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORT"];
+v230 -> v431 [label="ch_DADA2_tax_tsv"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v431 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORT"];
+v260 -> v431 [label="ch_meta"];
+
+v431 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORT"];
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v431 -> v534;
+
+v431 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORT"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v431 -> v438;
+
+v190 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY"];
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v190 -> v432 [label="ch_barrnapsummary"];
+
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v432 -> v436;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v230 -> v436 [label="ch_DADA2_tax_tsv"];
+
+v433 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v433 -> v436 [label="taxonomymethod"];
+
+v434 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v434 -> v436 [label="dbversion"];
+
+v435 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v435 -> v436 [label="cut_its"];
+
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v436 -> v534;
+
+v436 [label="NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE"];
+v437 [shape=point];
+v436 -> v437;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 -> v452 [label="ch_versions"];
+
+v439 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 -> v449 [label="ch_versions_robject_workflow"];
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v440 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ_INASV"];
+v274 -> v440 [label="ch_tsv"];
+
+v440 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ_INASV"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v440 -> v442 [label="ch_robject_inasv"];
+
+v440 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ_INASV"];
+v441 [shape=point];
+v440 -> v441;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v442 -> v444;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 -> v443 [label="ch_meta"];
+
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v443 -> v444;
+
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v444 -> v446;
+
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v445 -> v446;
+
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v446 -> v447;
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v448 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ"];
+v447 -> v448 [label="ch_for_r_objects"];
+
+v448 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ"];
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v448 -> v537 [label="phyloseq"];
+
+v448 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v448 -> v449;
+
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v451 [label="ch_versions_robject_workflow"];
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v450 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:TREESUMMARIZEDEXPERIMENT"];
+v447 -> v450 [label="ch_for_r_objects"];
+
+v450 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:TREESUMMARIZEDEXPERIMENT"];
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v450 -> v540 [label="tse"];
+
+v450 [label="NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:TREESUMMARIZEDEXPERIMENT"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 -> v451;
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 -> v452 [label="versions"];
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v452 -> v459 [label="ch_versions"];
+
+v453 [shape=point,label="",fixedsize=true,width=0.1];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="distinct"];
+v453 -> v454;
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="distinct"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v454 -> v455;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v455 -> v459;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v455 -> v456;
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v456 -> v457;
+
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v457 -> v458;
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v458 -> v465;
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v459 -> v460;
+
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v460 -> v461;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v461 -> v462;
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 -> v464;
+
+v463 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.of"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 -> v464;
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v464 -> v465;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v465 -> v466;
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 -> v473 [label="ch_collated_versions"];
+
+v467 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromPath"];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v467 -> v478 [label="ch_multiqc_config"];
+
+v468 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v468 -> v479 [label="ch_multiqc_custom_config"];
+
+v469 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.empty"];
+v480 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v469 -> v480 [label="ch_multiqc_logo"];
+
+v470 [shape=point,label="",fixedsize=true,width=0.1];
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v470 -> v471 [label="ch_workflow_summary"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v471 -> v472;
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v472 -> v473 [label="ch_multiqc_files"];
+
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 -> v476 [label="ch_multiqc_files"];
+
+v474 [shape=point,label="",fixedsize=true,width=0.1];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v474 -> v475 [label="ch_methods_description"];
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v475 -> v476;
+
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v476 -> v477 [label="ch_multiqc_files"];
+
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v477 -> v483;
+
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v478 -> v483;
+
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v479 -> v483;
+
+v480 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v480 -> v483;
+
+v481 [shape=point,label="",fixedsize=true,width=0.1];
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v481 -> v483 [label="replace_names"];
+
+v482 [shape=point,label="",fixedsize=true,width=0.1];
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v482 -> v483 [label="sample_names"];
+
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v483 -> v486;
+
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v485 [shape=point];
+v483 -> v485;
+
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v483 -> v561;
+
+v483 [label="NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"];
+v484 [shape=point];
+v483 -> v484;
+
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v486 -> v566 [label="multiqc_report"];
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 -> v487 [label="ch_meta"];
+
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v487 -> v561;
+
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v488 -> v561;
+
+v62 [label="NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE"];
+v489 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v489 [label="summary"];
+
+v489 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v489 -> v490;
+
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v490 -> v561;
+
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v491 -> v492;
+
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v492 -> v561;
+
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v493 -> v561;
+
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v494 -> v561;
+
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v495 -> v496;
+
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v497 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v496 -> v497;
+
+v497 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v497 -> v498;
+
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v498 -> v561;
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v147 -> v499 [label="ch_dada2_asv"];
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v499 -> v561;
+
+v179 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SEQUENCES_ABUNDANCES"];
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v179 -> v500 [label="ch_unfiltered_fasta"];
+
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v500 -> v561;
+
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v501 -> v561;
+
+v147 [label="NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE"];
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v147 -> v502;
+
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v502 -> v561;
+
+v166 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS"];
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v166 -> v503 [label="ch_dada2_asv"];
+
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v503 -> v561;
+
+v172 [label="NFCORE_AMPLISEQ:AMPLISEQ:DECONTAM"];
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 -> v504;
+
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v504 -> v561;
+
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v505 -> v561;
+
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v506 -> v561;
+
+v507 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v507 -> v561;
+
+v190 [label="NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY"];
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v190 -> v508 [label="ch_barrnapsummary"];
+
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v508 -> v561;
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 -> v509;
+
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v509 -> v561;
+
+v194 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU"];
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 -> v510 [label="ch_dada2_fasta"];
+
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v510 -> v561;
+
+v200 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v200 -> v511;
+
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v511 -> v561;
+
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v512 -> v561;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v230 -> v513 [label="ch_DADA2_tax_tsv"];
+
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v513 -> v561;
+
+v514 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v514 -> v561;
+
+v252 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v252 -> v515 [label="ch_QIIME2_tax_tsv"];
+
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v515 -> v561;
+
+v260 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SAMPLES"];
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="countLines"];
+v260 -> v516 [label="ch_dada2_asv"];
+
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="countLines"];
+v517 [shape=point];
+v516 -> v517;
+
+v274 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA"];
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="countLines"];
+v274 -> v518 [label="ch_tsv"];
+
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="countLines"];
+v519 [shape=point];
+v518 -> v519;
+
+v278 [label="NFCORE_AMPLISEQ:AMPLISEQ:FILTER_STATS"];
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v278 -> v520;
+
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v520 -> v561;
+
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v521 -> v561;
+
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v522 -> v561;
+
+v352 [label="NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v352 -> v523 [label="depth"];
+
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v523 -> v561;
+
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v524 -> v525;
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v525 -> v561;
+
+v526 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v526 -> v527;
+
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v527 -> v561;
+
+v528 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v528 -> v529;
+
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v529 -> v561;
+
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v530 -> v531;
+
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v531 -> v561;
+
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v532 -> v533;
+
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v533 -> v561;
+
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v534 -> v535;
+
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v535 -> v536;
+
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v536 -> v561;
+
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v538 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v537 -> v538;
+
+v538 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v538 -> v539;
+
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v539 -> v561;
+
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v541 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v540 -> v541;
+
+v541 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v541 -> v542;
+
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v542 -> v561;
+
+v543 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v543 -> v561 [label="report_abstract"];
+
+v544 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v544 -> v561 [label="input_samplesheet"];
+
+v545 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v545 -> v561 [label="find_truncation_values"];
+
+v546 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v546 -> v561 [label="mergepairs_strategy"];
+
+v547 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v547 -> v561 [label="decontam"];
+
+v548 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v548 -> v561 [label="filter_codons_fasta"];
+
+v549 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v549 -> v561 [label="filter_codons_stats"];
+
+v550 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v550 -> v561 [label="itsx_cutasv_summary"];
+
+v551 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v551 -> v561 [label="sintax_tax"];
+
+v552 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v552 -> v561 [label="kraken2_tax"];
+
+v553 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v553 -> v561 [label="pplace_tax"];
+
+v554 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v554 -> v561;
+
+v555 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v555 -> v561 [label="run_qiime2"];
+
+v556 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v556 -> v561 [label="val_used_taxonomy"];
+
+v557 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v557 -> v561 [label="qiime2_filtertaxa"];
+
+v558 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v558 -> v561 [label="alpha_rarefaction"];
+
+v559 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v559 -> v561 [label="ancom"];
+
+v560 [shape=point,label="",fixedsize=true,width=0.1];
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v560 -> v561 [label="picrust_pathways"];
+
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v563 [shape=point];
+v561 -> v563;
+
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v562 [shape=point];
+v561 -> v562;
+
+v561 [label="NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"];
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v561 -> v564;
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v452 -> v564 [label="ch_versions"];
+
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v565 [shape=point];
+v564 -> v565 [label="versions"];
+
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v567 [shape=point];
+v566 -> v567;
+
+}
