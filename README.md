@@ -25,6 +25,37 @@ brew install graphviz
 
 ---
 
+## Quick Start
+
+The repository already contains:
+
+```text
+ampliseq_wfinstance.json
+ampliseq.dot
+epigenomics-chameleon-hep-2seq-100k-001.json
+```
+
+If the goal is only to reproduce the analyses presented in the paper, executing a new workflow is not required. Simply clone the repository, install the required Python dependencies, and run the analysis scripts:
+
+```bash
+git clone <repository-url>
+cd workflow_collections_analysis
+
+pip install wfcommons networkx pydot matplotlib
+```
+
+Example:
+
+```bash
+python scripts/nextflow_dag_metrics.py
+python scripts/task_categories.py
+python scripts/nextflow_runtime_stats.py
+python scripts/nextflow_resource_stats.py
+```
+
+The workflow execution and WfInstance generation steps described below are only necessary when generating a new WfInstance from a different nf-core workflow execution.
+
+
 ## Executing an nf-core Workflow
 
 Create a new directory:
