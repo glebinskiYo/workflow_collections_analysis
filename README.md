@@ -38,7 +38,7 @@ epigenomics-chameleon-hep-2seq-100k-001.json
 If the goal is only to reproduce the analyses presented in the paper, executing a new workflow is not required. Simply clone the repository, install the required Python dependencies, and run the analysis scripts:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/glebinskiYo/workflow_collections_analysis.git
 cd workflow_collections_analysis
 
 pip install wfcommons networkx pydot matplotlib
