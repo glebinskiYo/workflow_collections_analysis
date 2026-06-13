@@ -8,6 +8,7 @@ The following software must be installed:
 * Nextflow
 * Python 3.10+
 * Git
+* Docker
 
 Python packages:
 
