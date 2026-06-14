@@ -90,7 +90,7 @@ execution_timeline_ampliseq.html
 dag.html
 ```
 
-Export the DAG as a DOT file if required:
+Export the DAG as a DOT file:
 
 ```bash
 dot -Tdot dag.html > ampliseq.dot
